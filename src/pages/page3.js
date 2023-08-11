@@ -1,4 +1,8 @@
-function App() {
+
+
+
+
+const Page3 = () => {
   return (
     <>
       <header className="hide-when-mobile">
@@ -127,9 +131,7 @@ function App() {
           </div>
         </div>
       </header>
-      <main>
-Home Page
-      </main>
+      <main>Page3</main>
       <footer>
         Designed and developed by Courses4Arab.com
         <span>🧡</span>
@@ -138,4 +140,4 @@ Home Page
   );
 }
 
-export default App;
+export default Page3;
