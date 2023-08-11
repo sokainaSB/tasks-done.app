@@ -1,18 +1,13 @@
-
 import Header from "../comp/header";
-
 
 const Page3 = () => {
   return (
     <>
-<Header />
+      <Header />
       <main>Page3</main>
-      <footer>
-        Designed and developed by Courses4Arab.com
-        <span>🧡</span>
-      </footer>
+      <Footer />
     </>
   );
-}
+};
 
 export default Page3;

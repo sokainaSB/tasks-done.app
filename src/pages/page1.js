@@ -1,17 +1,14 @@
-
 import Header from "../comp/header";
-
+import Footer from '../comp/footer';
 
 const Page1 = () => {
   return (
     <>
-<Header />
+      <Header />
 
       <main>Home Page</main>
-      <footer>
-        Designed and developed by Courses4Arab.com
-        <span>🧡</span>
-      </footer>
+
+      <Footer />
     </>
   );
 };

@@ -1,12 +1,9 @@
-
-
-
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
     <div>
-            <header className="hide-when-mobile">
+      <header className="hide-when-mobile">
         <h1>SOU APP</h1>
         <ul className="flex">
           <li className="main-list">
@@ -134,6 +131,6 @@ const Header = () => {
       </header>
     </div>
   );
-}
+};
 
 export default Header;
