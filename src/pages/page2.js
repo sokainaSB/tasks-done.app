@@ -1,4 +1,5 @@
 import Header from "../comp/header";
+import Footer from '../comp/footer';
 
 const Page2 = () => {
   return (
