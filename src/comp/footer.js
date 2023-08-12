@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer>
         Designed and developed by Courses4Arab.com
-        <span>🧡</span>
+        <span>🧡By sou</span>
       </footer>
     </div>
   );
