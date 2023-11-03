@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 
 function StartButton() {
-  const [websiteUrl, setWebsiteUrl] = useState(''); // Initialize with an empty string
-  const [wordToClick, setWordToClick] = useState(''); // Initialize with an empty string
+  const [websiteUrl, setWebsiteUrl] = useState('');
+  const [wordToClick, setWordToClick] = useState('');
 
-  const openWebsiteAndClick = (word, url) => {
-    const newTab = window.open(url, '_blank');
-    
-    setTimeout(() => {
-      const wordElement = newTab.document.querySelector(`a:contains('${word}')`);
-      if (wordElement) {
-        wordElement.click();
+  const openWebsiteInNewWindow = () => {
+    if (websiteUrl && wordToClick) {
+      const newWindow = window.open('', '_blank');
+      if (newWindow) {
+        console.log('New window opened');
+        newWindow.location.href = websiteUrl;
+
+        newWindow.addEventListener('load', () => {
+          console.log('Page fully loaded');
+          const wordElement = newWindow.document.querySelector(`a:contains('${wordToClick}')`);
+          if (wordElement) {
+            console.log('Word found, clicking on it');
+            wordElement.click();
+          } else {
+            console.log('Word not found');
+          }
+        });
+      } else {
+        console.error('Unable to open a new window. Make sure your browser allows pop-ups.');
       }
-    }, 5000);
-  }
-
-  const handleStartClick = () => {
-    openWebsiteAndClick(wordToClick, websiteUrl);
-  }
+    }
+  };
 
   return (
     <div>
@@ -33,7 +41,7 @@ function StartButton() {
         value={wordToClick}
         onChange={(e) => setWordToClick(e.target.value)}
       />
-      <button onClick={handleStartClick}>Start</button>
+      <button onClick={openWebsiteInNewWindow}>Start</button>
     </div>
   );
 }
