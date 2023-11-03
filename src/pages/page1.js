@@ -6,7 +6,20 @@ const Page1 = () => {
     <>
       <Header />
 
-      <main>Home Page</main>
+      <main>
+        {/* Your HTML content here */}
+        <h1>Enter the website and word to click:</h1>
+        <form action="/click" method="post">
+          <label for="website">Website URL:</label>
+          <input type="text" name="website" id="website" required />
+          <br />
+          <label htmlFor="word">Word to Click:</label> {/* Corrected 'for' to 'htmlFor' */}
+          <input type="text" name="word" id="word" required />
+          <br />
+          <input type="submit" value="Start" />
+        </form>
+        {/* End of your HTML content */}
+      </main>
 
       <Footer />
     </>
